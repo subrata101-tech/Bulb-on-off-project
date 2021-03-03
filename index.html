@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <h1>HERE IS MY BLUB CONTROLLER</h1>
+    <button onclick="turnOff()" >TURN OFF</button>
+    <button onclick="turnOn()" >TURN ON</button>
+
+    <button id="OnOffBulb" onclick="toggleBulb()">ON</button>
+    <div class="bulb-container">
+        <img id="bulb" src="x.jpg" alt="" style="width: 25%;" height="25%">
+    </div>
+
+    <script>
+
+        const turnOn=()=>
+        {
+            let imgOb=document.getElementById('bulb');
+            imgOb.setAttribute("src","y.jpg");
+        }
+        const turnOff=()=>
+        {
+            let imgOb=document.getElementById('bulb');
+            imgOb.setAttribute("src","x.jpg");
+        }
+
+        const toggleBulb=()=>
+        {
+            let imgOb=document.getElementById('bulb');
+            let setValue=imgOb.getAttribute('src');
+            console.log(setValue)
+
+            let buttonOb=document.getElementById('OnOffBulb');
+            let buttonText=buttonOb.innerHTML;
+
+
+            if(setValue=="x.jpg")
+            {
+                turnOn();
+                buttonOb.innerHTML="OFF";
+            }
+            else
+            {
+                turnOff();
+                buttonOb.innerHTML="ON";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
